@@ -33,7 +33,7 @@ jobs:
       run: | 
         sudo apt install curl ffmpeg
         curl https://rclone.org/install.sh | sudo bash
-        echo $CONFIG_REMOTE > rclone.conf
+        echo -e $CONFIG_REMOTE > rclone.conf
         rclone --config="rclone.conf" listremotes 
     - name: START
       run: | 
