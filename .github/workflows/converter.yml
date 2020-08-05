@@ -33,8 +33,6 @@ jobs:
       run: | 
         sudo apt install curl ffmpeg
         curl https://rclone.org/install.sh | sudo bash
-#        rclone --config="rclone.conf" mount streamingDrive: "/content/drive/Shared drives/Ciack ★" --allow-other --buffer-size 256M --dir-cache-time 96h --timeout 1h --umask 002 --daemon
-#        ls "/content/drive/Shared drives/Ciack ★/"
         echo $CONFIG_REMOTE >> rclone.conf
         cat rclone.conf
     - name: START
