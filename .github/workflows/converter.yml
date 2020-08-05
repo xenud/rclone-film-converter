@@ -40,4 +40,4 @@ jobs:
         ls "/home/runner/work/rclone-film-converter/rclone-film-converter/drive"
     - name: START
       run: | 
-        python converter.py
+        python /home/runner/work/rclone-film-converter/rclone-film-converter/converter.py
