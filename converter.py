@@ -1,6 +1,7 @@
 import glob, os, subprocess, shlex, json
 import shutil
 
+print("started")
 for file in glob.iglob("/home/runner/work/rclone-film-converter/rclone-film-converter/drive/" + '**/*.*', recursive=True):
   bashCommand = "ffprobe -v quiet -print_format json -show_format -show_streams \"" + file + "\""
   process = subprocess.Popen(shlex.split(bashCommand), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
