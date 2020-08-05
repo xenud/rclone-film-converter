@@ -24,9 +24,9 @@ jobs:
       uses: actions/setup-python@v1
       with:
         python-version: 3.8
-    - name: Install requests glob shlex shutil #安装requests
+    - name: Install requests glob #安装requests
       run: |
-        pip install requests glob shlex shutil 
+        pip install requests glob3
     - name: Configuration  #读取机密
       env: 
         CONFIG_REMOTE: ${{ secrets.CONFIG_REMOTE }} # secrets_id 提供
