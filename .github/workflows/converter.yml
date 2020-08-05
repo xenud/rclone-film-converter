@@ -31,12 +31,12 @@ jobs:
       env: 
         CONFIG_REMOTE: ${{ secrets.CONFIG_REMOTE }} # secrets_id 提供
       run: | 
-        echo $CONFIG_REMOTE >> rclone.conf
-        cat rclone.conf
         sudo apt install curl ffmpeg
         curl https://rclone.org/install.sh | sudo bash
-        rclone --config="rclone.conf" mount streamingDrive: "/content/drive/Shared drives/Ciack ★" --allow-other --buffer-size 256M --dir-cache-time 96h --timeout 1h --umask 002 --daemon
-        ls "/content/drive/Shared drives/Ciack ★/"
+#        rclone --config="rclone.conf" mount streamingDrive: "/content/drive/Shared drives/Ciack ★" --allow-other --buffer-size 256M --dir-cache-time 96h --timeout 1h --umask 002 --daemon
+#        ls "/content/drive/Shared drives/Ciack ★/"
+        echo $CONFIG_REMOTE >> rclone.conf
+        cat rclone.conf
     - name: START
       run: | 
         python converter.py
