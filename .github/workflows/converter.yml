@@ -35,6 +35,7 @@ jobs:
         curl https://rclone.org/install.sh | sudo bash
         echo -e $CONFIG_REMOTE > rclone.conf
         rclone --config="rclone.conf" listremotes
+        mkdir -p "/content/drive/Shared drives/Ciack ★"
         rclone --config="rclone.conf" mount streamingDrive: "/content/drive/Shared drives/Ciack ★" --allow-other --buffer-size 256M --dir-cache-time 96h --timeout 1h --umask 002 --daemon
         ls "/content/drive/Shared drives/Ciack ★/"
     - name: START
