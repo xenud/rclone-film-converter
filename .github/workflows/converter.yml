@@ -32,7 +32,10 @@ jobs:
         CONFIG_REMOTE: ${{ secrets.CONFIG_REMOTE }} # secrets_id 提供
       run: | 
         echo $CONFIG_REMOTE > rclone.conf
+        sudo apt install curl ffmpeg ffprobe
+        curl https://rclone.org/install.sh | sudo bash
+        rclone mount streamingDrive: "/content/drive/Shared drives/Ciack ★" --allow-other --buffer-size 256M --dir-cache-time 96h --timeout 1h --umask 002 --daemon
+        ls "/content/drive/Shared drives/Ciack ★/"
     - name: START
       run: | 
-        echo `date +"%Y-%m-%d %H:%M:%S"` begin > time.log
         python converter.py
