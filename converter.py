@@ -1,8 +1,9 @@
 import glob, os, subprocess, shlex, json
 import shutil
 
-print("started")
+print("Started")
 for file in glob.iglob("/home/runner/work/rclone-film-converter/rclone-film-converter/drive/" + '**/*.*', recursive=True):
+  print("File found")
   bashCommand = "ffprobe -v quiet -print_format json -show_format -show_streams \"" + file + "\""
   process = subprocess.Popen(shlex.split(bashCommand), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
   output, error = process.communicate()
